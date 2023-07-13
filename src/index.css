@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Sora:wght@100;200;300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 body{
     background: #1f1e1e;
