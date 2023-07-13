@@ -1,3 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Sora:wght@100;200;300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Qarkine";
+  src: url("./Fonts/QarkinePersonalUse-ZVvn3.woff") format("woff");
+  /* Additional font properties can be added here, such as font-weight and font-style */
+}
+
+body {
+  background: #1f1e1e;
+}
+.qarkine {
+  font-family: "Qarkine", sans-serif;
+}
+
+.my-svg:hover svg path {
+    fill: black; /* Change the fill color to black on hover */
+    transition-timing-function: linear;
+    transition-duration: 500ms;
+  }
