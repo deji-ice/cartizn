@@ -2,7 +2,7 @@
 import carti from "../assets/Property 1=Variant2carti.png"
 
 const About = () => {
-    return <div className="text-white flex font-thin h-[18rem]">
+    return <section className="text-white flex font-thin h-[18rem]">
         <div className="flex flex-4 p-10">
             socials
         </div>
@@ -16,12 +16,13 @@ const About = () => {
             <p className="">With a passion for capturing the beauty of the world through my lens. Photography is more than just a hobby for
                 me—it's a way of life. My photography style is a blend of artistry and storytelling. I love experimenting with
                 different techniques and perspectives to create unique and visually striking images. From vivid colors and dramatic
-                lighting to minimalist compositions, I believe in pushing the boundaries of creativity to make each photograph a work of art.</p>
+                lighting to minimalist compositions, I believe in pushing the boundaries of creativity to make each photograph a work of art.
+            </p>
         </div>
         <div className="flex-4 flex grayscale hover:filter-none  hover:ease-linear duration-500">
             <img src={carti} alt="Fadejimi Ogunleye" className="h-[18rem]" />
         </div>
-    </div>;
+    </section>;
 };
 
 export default About;
