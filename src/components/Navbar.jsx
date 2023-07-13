@@ -2,12 +2,12 @@
 import DensityLargeIcon from '@mui/icons-material/DensityLarge';
 
 const Navbar = () => {
-  return <div className="flex border border-y-zinc-300 text-white ">
+  return <div className="flex border border-y-zinc-300 text-white font-thin text-sm ">
     <div className="border flex-8 border-y-zinc-300 p-10">
         logo
     </div>
     <div className="border flex-1 border-y-zinc-300 p-10 text-center"> 
-        "The ways of <span className="text-yellow-500">Carti.</span> are not regular"
+        "The ways of <span className="text-[#DEC649] font-light">Carti.</span> are not regular"
     </div>
     <div className="border flex-9 border-y-zinc-300 p-10">
     <DensityLargeIcon />
