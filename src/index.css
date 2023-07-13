@@ -16,3 +16,9 @@ body {
 .qarkine {
   font-family: "Qarkine", sans-serif;
 }
+
+.my-svg:hover svg path {
+    fill: black; /* Change the fill color to black on hover */
+    transition-timing-function: linear;
+    transition-duration: 500ms;
+  }
