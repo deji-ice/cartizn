@@ -1,9 +1,74 @@
+import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
+import axios from "axios";
 
 
 const Explore = () => {
+    const [data1, setData1] = useState([]);
+    const [data2, setData2] = useState([]);
+    const [data3, setData3] = useState([]);
+    const [currentIndex1, setCurrentIndex1] = useState(0);
+    const [currentIndex2, setCurrentIndex2] = useState(0);
+    const [currentIndex3, setCurrentIndex3] = useState(0);
+
+
+    useEffect(() => {
+        if (data1.length > 0) {
+          const interval1 = setInterval(() => {
+            setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
+          }, 2000);
+    
+          return () => clearInterval(interval1);
+        }
+      }, [data1.length]);
+    
+      useEffect(() => {
+        if (data2.length > 0) {
+          const interval2 = setInterval(() => {
+            setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
+          }, 3000);
+    
+          return () => clearInterval(interval2);
+        }
+      }, [data2]);
+    
+      useEffect(() => {
+        if (data3.length > 0) {
+          const interval3 = setInterval(() => {
+            setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
+          }, 4000);
+    
+          return () => clearInterval(interval3);
+        }
+      }, [data3]);
+    // const { data} = useFetch(
+    //     `/explore1`)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(import.meta.env.VITE_API_URL + '/explores/?populate=*', {
+                    headers: {
+                        Authorization: 'bearer ' + import.meta.env.VITE_API_TOKEN,
+                    },
+                });
+                setData1(res?.data.data[0].attributes.explore1.data);
+                setData2(res?.data.data[0].attributes.explore2.data);
+                setData3(res?.data.data[0].attributes.explore3.data);
+                console.log(res?.data.data[0].attributes);
+            } catch (err) {
+                console.log("frtch");
+            }
+        };
+        fetchData();
+    }, []);
+
+
     return <section className="flex ">
-        <div className="flex flex-1">
-            images
+        <div className="flex flex-1 ease-linear duration-500">
+            <img src={import.meta.env.VITE_API_UPLOAD_URL + data1[1]?.attributes.url}  />
+           
+          
+            {/* <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data[currentIndex]?.attributes.url}/> */}
         </div>
         <div className="relative  flex flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
