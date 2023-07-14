@@ -3,7 +3,7 @@
 const Explore = () => {
     return <section className="flex ">
         <div className="flex flex-1">
-            images
+            imagess
         </div>
         <div className="relative  flex flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
