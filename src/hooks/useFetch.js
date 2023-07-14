@@ -11,7 +11,7 @@ const useFetch = (url) => {
       console.log(url);
       try {
         setLoading(true);
-        const res = await axios.get(import.meta.env.VITE_API_URL + "/explore1", {
+        const res = await axios.get(import.meta.env.VITE_API_URL + url, {
           headers: {
             Authorization: "bearer " + import.meta.env.VITE_API_TOKEN,
           },
@@ -25,7 +25,7 @@ const useFetch = (url) => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [url]);
   return { data, loading, error };
 };
 
