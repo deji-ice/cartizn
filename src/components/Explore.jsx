@@ -7,9 +7,13 @@ const Explore = () => {
     const [data1, setData1] = useState([]);
     const [data2, setData2] = useState([]);
     const [data3, setData3] = useState([]);
+    const [data4, setData4] = useState([]);
+    const [data5, setData5] = useState([]);
     const [currentIndex1, setCurrentIndex1] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
     const [currentIndex3, setCurrentIndex3] = useState(0);
+    const [currentIndex4, setCurrentIndex4] = useState(0);
+    const [currentIndex5, setCurrentIndex5] = useState(0);
 
 
     useEffect(() => {
@@ -25,23 +29,42 @@ const Explore = () => {
         if (data2) {
             const interval2 = setInterval(() => {
                 setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
-            }, 3000);
+            }, 2500);
             return () => clearInterval(interval2);
         }
     }, [data2]);
 
-    //   useEffect(() => {
-    //     if (data3) {
-    //       const interval3 = setInterval(() => {
-    //         setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
-    //       }, 4000);
+    useEffect(() => {
+        if (data3) {
+            const interval3 = setInterval(() => {
+                setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
+            }, 3000);
 
-    //       return () => clearInterval(interval3);
-    //     }
-    //   }, [data3]);
+            return () => clearInterval(interval3);
+        }
+    }, [data3]);
+    useEffect(() => {
+        if (data4) {
+            const interval4 = setInterval(() => {
+                setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
+            }, 3200);
+
+            return () => clearInterval(interval4);
+        }
+    }, [data4]);
+    useEffect(() => {
+        if (data5) {
+            const interval5 = setInterval(() => {
+                setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
+            }, 3500);
+
+            return () => clearInterval(interval5);
+        }
+    }, [data5]);
+
     // const { data} = useFetch(
     //     `/explore1`)
-    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -53,7 +76,9 @@ const Explore = () => {
                 });
                 setData1(res?.data.data[0].attributes.explore1.data);
                 setData2(res?.data.data[0].attributes.explore2.data);
-                // setData3(res?.data.data[0].attributes.explore3.data);
+                setData3(res?.data.data[0].attributes.explore3.data);
+                setData4(res?.data.data[0].attributes.explore4.data);
+                setData5(res?.data.data[0].attributes.explore5.data);
                 console.log(res?.data.data[0].attributes);
             } catch (err) {
                 console.log("frtch");
@@ -64,11 +89,27 @@ const Explore = () => {
 
 
     return <section className="flex ">
-        <div className="flex flex-1 ease-linear duration-500">
+        {/* <div className="grid grid-cols-3 grid-rows-2 flex-1 gap-0 ease-linear duration-500 ">
+
+            <img className="row-span-2" src={import.meta.env.VITE_API_UPLOAD_URL + data1[currentIndex1]?.attributes.url} />
+            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data2[currentIndex2]?.attributes.url} />
+            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data3[currentIndex3]?.attributes.url}  />
+            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data4[currentIndex4]?.attributes.url}  />
+            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data5[currentIndex5]?.attributes.url}  />
+        </div> */}
+
+        <div className="flex flex-1 gap-0 ease-linear duration-500 ">
             {/* import.meta.env.VITE_API_UPLOAD_URL is needed for images to show  */}
-            <img src={import.meta.env.VITE_API_UPLOAD_URL + data1[currentIndex1]?.attributes.url} />
-            <img src={import.meta.env.VITE_API_UPLOAD_URL + data2[currentIndex2]?.attributes.url} />
-            {/* <img src={import.meta.env.VITE_API_UPLOAD_URL + data3[currentIndex3]?.attributes.url}  /> */}
+            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data1[currentIndex1]?.attributes.url} />
+            <div className="flex flex-col  ">
+                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data2[currentIndex2]?.attributes.url} />
+                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data3[currentIndex3]?.attributes.url} />
+            </div>
+            <div className="flex flex-col">
+                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data4[currentIndex4]?.attributes.url} />
+                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data5[currentIndex5]?.attributes.url} />
+            </div>
+
         </div>
         <div className="relative  flex flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
