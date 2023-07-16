@@ -22,3 +22,8 @@ body {
     transition-timing-function: linear;
     transition-duration: 500ms;
   }
+
+  .my-svg:hover svg .specific-path {
+    fill: #DEC649;
+    /* Add any other desired styles */
+  }
