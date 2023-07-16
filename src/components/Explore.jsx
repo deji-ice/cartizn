@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import useFetch from "../hooks/useFetch";
-import axios from "axios";
 
 
 const Explore = () => {
-    const [data1, setData1] = useState([]);
-    const [data2, setData2] = useState([]);
-    const [data3, setData3] = useState([]);
-    const [data4, setData4] = useState([]);
-    const [data5, setData5] = useState([]);
+    const data1 = ["https://i.imgur.com/kQEx2GY.png", "https://i.imgur.com/Q5CtCJi.png", "https://i.imgur.com/i7A133P.png"];
+    const data2 = ["https://i.imgur.com/a4Abq7x.png", "https://i.imgur.com/fyfzvnX.png", "https://i.imgur.com/rcWZdSy.png"];
+    const data3 = ["https://i.imgur.com/JcbsGag.png", "https://i.imgur.com/KMLqgha.png", "https://i.imgur.com/3hRiyi3.png"];
+    const data4 = ["https://i.imgur.com/Kc5WiJG.png", "https://i.imgur.com/H0pKlzd.png", "https://i.imgur.com/8nEu8Zu.png"];
+    const data5 = ["https://i.imgur.com/wuB6tt1.png", "https://i.imgur.com/NtZ6Hb4.png", "https://i.imgur.com/Qc3QLGk.png"];
     const [currentIndex1, setCurrentIndex1] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
     const [currentIndex3, setCurrentIndex3] = useState(0);
@@ -23,7 +21,7 @@ const Explore = () => {
             }, 2000);
             return () => clearInterval(interval1);
         }
-    }, [data1]);
+    }, []);
 
     useEffect(() => {
         if (data2) {
@@ -32,7 +30,7 @@ const Explore = () => {
             }, 2500);
             return () => clearInterval(interval2);
         }
-    }, [data2]);
+    }, []);
 
     useEffect(() => {
         if (data3) {
@@ -42,7 +40,7 @@ const Explore = () => {
 
             return () => clearInterval(interval3);
         }
-    }, [data3]);
+    }, []);
     useEffect(() => {
         if (data4) {
             const interval4 = setInterval(() => {
@@ -51,7 +49,7 @@ const Explore = () => {
 
             return () => clearInterval(interval4);
         }
-    }, [data4]);
+    }, []);
     useEffect(() => {
         if (data5) {
             const interval5 = setInterval(() => {
@@ -60,32 +58,33 @@ const Explore = () => {
 
             return () => clearInterval(interval5);
         }
-    }, [data5]);
+    }, []);
 
     // const { data} = useFetch(
     //     `/explore1`)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                //?populate=* is needed for images to show up in the api response
-                const res = await axios.get(import.meta.env.VITE_API_URL + '/explores?populate=*', {
-                    headers: {
-                        Authorization: 'bearer ' + import.meta.env.VITE_API_TOKEN,
-                    },
-                });
-                setData1(res?.data.data[0].attributes.explore1.data);
-                setData2(res?.data.data[0].attributes.explore2.data);
-                setData3(res?.data.data[0].attributes.explore3.data);
-                setData4(res?.data.data[0].attributes.explore4.data);
-                setData5(res?.data.data[0].attributes.explore5.data);
-                console.log(res?.data.data[0].attributes);
-            } catch (err) {
-                console.log("frtch");
-            }
-        };
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             //?populate=* is needed for images to show up in the api response
+    //             const res = await axios.get(import.meta.env.VITE_API_URL + '/explores?populate=*', {
+    //                 headers: {
+    //                     Authorization: 'bearer ' + import.meta.env.VITE_API_TOKEN,
+    //                 },
+    //             });
+    //             setData1(res?.data.data[0].attributes.explore1.data);
+    //             setData2(res?.data.data[0].attributes.explore2.data);
+    //             setData3(res?.data.data[0].attributes.explore3.data);
+    //             setData4(res?.data.data[0].attributes.explore4.data);
+    //             setData5(res?.data.data[0].attributes.explore5.data);
+    //             console.log(res?.data.data[0].attributes);
+    //         } catch (err) {
+    //             console.log("frtch");
+    //         }
+    //     };
+    //     fetchData();
+    // }, []);
+
 
 
     return <section className="flex ">
@@ -100,14 +99,14 @@ const Explore = () => {
 
         <div className="flex flex-1 gap-0 ease-linear duration-500 ">
             {/* import.meta.env.VITE_API_UPLOAD_URL is needed for images to show  */}
-            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data1[currentIndex1]?.attributes.url} />
+            <img className="" src={data1[currentIndex1]} />
             <div className="flex flex-col  ">
-                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data2[currentIndex2]?.attributes.url} />
-                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data3[currentIndex3]?.attributes.url} />
+                <img className="flex-grow object-cover" src={data2[currentIndex2]} />
+                <img className="flex-grow object-cover" src={data3[currentIndex3]} />
             </div>
             <div className="flex flex-col">
-                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data4[currentIndex4]?.attributes.url} />
-                <img className="flex-grow object-cover" src={import.meta.env.VITE_API_UPLOAD_URL + data5[currentIndex5]?.attributes.url} />
+                <img className="flex-grow object-cover" src={data4[currentIndex4]} />
+                <img className="flex-grow object-cover" src={data5[currentIndex5]} />
             </div>
 
         </div>
@@ -133,7 +132,7 @@ const Explore = () => {
                     <path opacity="0.5" d="M12 0.833333C10.5272 0.833333 9.33333 2.02724 9.33333 3.5C9.33333 4.97276 10.5272 6.16667 12 6.16667C13.4728 6.16667 14.6667 4.97276 14.6667 3.5C14.6667 2.02724 13.4728 0.833333 12 0.833333ZM11.5 3.5L11.5 97.5L12.5 97.5L12.5 3.5L11.5 3.5Z" fill="#F5F5F5" />
                     <path d="M16.06 120.4L13.44 123.02C12.67 123.79 11.41 123.79 10.64 123.02L4.12996 116.5M19.96 116.5L18.92 117.54" stroke="#DEC649" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-
+                💯 
             </div>
         </div>
     </section>;
