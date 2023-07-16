@@ -15,90 +15,53 @@ const Explore = () => {
 
 
     useEffect(() => {
-        if (data1) {
-            const interval1 = setInterval(() => {
-                setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
-            }, 2000);
-            return () => clearInterval(interval1);
+        const intervals = [];
+      
+        if (data1 && data1.length > 0) {
+          const interval1 = setInterval(() => {
+            setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
+          }, 2000);
+          intervals.push(interval1);
         }
-    }, []);
-
-    useEffect(() => {
-        if (data2) {
-            const interval2 = setInterval(() => {
-                setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
-            }, 2500);
-            return () => clearInterval(interval2);
+      
+        if (data2 && data2.length > 0) {
+          const interval2 = setInterval(() => {
+            setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
+          }, 2500);
+          intervals.push(interval2);
         }
-    }, []);
-
-    useEffect(() => {
-        if (data3) {
-            const interval3 = setInterval(() => {
-                setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
-            }, 3000);
-
-            return () => clearInterval(interval3);
+      
+        if (data3 && data3.length > 0) {
+          const interval3 = setInterval(() => {
+            setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
+          }, 3000);
+          intervals.push(interval3);
         }
-    }, []);
-    useEffect(() => {
-        if (data4) {
-            const interval4 = setInterval(() => {
-                setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
-            }, 3200);
-
-            return () => clearInterval(interval4);
+      
+        if (data4 && data4.length > 0) {
+          const interval4 = setInterval(() => {
+            setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
+          }, 3200);
+          intervals.push(interval4);
         }
-    }, []);
-    useEffect(() => {
-        if (data5) {
-            const interval5 = setInterval(() => {
-                setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
-            }, 3500);
-
-            return () => clearInterval(interval5);
+      
+        if (data5 && data5.length > 0) {
+          const interval5 = setInterval(() => {
+            setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
+          }, 3500);
+          intervals.push(interval5);
         }
-    }, []);
-
-    // const { data} = useFetch(
-    //     `/explore1`)
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             //?populate=* is needed for images to show up in the api response
-    //             const res = await axios.get(import.meta.env.VITE_API_URL + '/explores?populate=*', {
-    //                 headers: {
-    //                     Authorization: 'bearer ' + import.meta.env.VITE_API_TOKEN,
-    //                 },
-    //             });
-    //             setData1(res?.data.data[0].attributes.explore1.data);
-    //             setData2(res?.data.data[0].attributes.explore2.data);
-    //             setData3(res?.data.data[0].attributes.explore3.data);
-    //             setData4(res?.data.data[0].attributes.explore4.data);
-    //             setData5(res?.data.data[0].attributes.explore5.data);
-    //             console.log(res?.data.data[0].attributes);
-    //         } catch (err) {
-    //             console.log("frtch");
-    //         }
-    //     };
-    //     fetchData();
-    // }, []);
+      
+        return () => {
+          intervals.forEach((interval) => clearInterval(interval));
+        };
+      }, []);
+      
 
 
 
     return <section className="flex ">
-        {/* <div className="grid grid-cols-3 grid-rows-2 flex-1 gap-0 ease-linear duration-500 ">
-
-            <img className="row-span-2" src={import.meta.env.VITE_API_UPLOAD_URL + data1[currentIndex1]?.attributes.url} />
-            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data2[currentIndex2]?.attributes.url} />
-            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data3[currentIndex3]?.attributes.url}  />
-            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data4[currentIndex4]?.attributes.url}  />
-            <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data5[currentIndex5]?.attributes.url}  />
-        </div> */}
-
         <div className="flex flex-col lg:flex-row flex-1 gap-0 ease-linear duration-500 ">
-            {/* import.meta.env.VITE_API_UPLOAD_URL is needed for images to show  */}
             <img className="" src={data1[currentIndex1]} />
             <div className="flex flex-row lg:flex-col  ">
                 <img className="flex-grow object-cover" src={data2[currentIndex2]} />
@@ -108,7 +71,6 @@ const Explore = () => {
                 <img className="flex-grow object-cover" src={data4[currentIndex4]} />
                 <img className="flex-grow object-cover" src={data5[currentIndex5]} />
             </div>
-
         </div>
         <div className="relative hidden lg:flex  flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
@@ -132,7 +94,7 @@ const Explore = () => {
                     <path opacity="0.5" d="M12 0.833333C10.5272 0.833333 9.33333 2.02724 9.33333 3.5C9.33333 4.97276 10.5272 6.16667 12 6.16667C13.4728 6.16667 14.6667 4.97276 14.6667 3.5C14.6667 2.02724 13.4728 0.833333 12 0.833333ZM11.5 3.5L11.5 97.5L12.5 97.5L12.5 3.5L11.5 3.5Z" fill="#F5F5F5" />
                     <path d="M16.06 120.4L13.44 123.02C12.67 123.79 11.41 123.79 10.64 123.02L4.12996 116.5M19.96 116.5L18.92 117.54" stroke="#DEC649" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                💯 
+                💯
             </div>
         </div>
     </section>;

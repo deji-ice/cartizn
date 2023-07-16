@@ -2,7 +2,7 @@
 import carti from "../assets/Property 1=Variant2carti.png"
 
 const About = () => {
-    return <section className="relative mt-20 lg:mt-0 text-[#F5F5F5] lg:gap-5 flex flex-col items-center lg:flex-row font-thin lg:h-[18rem] ">
+    return <section className="relative mt-20 md:mt-10 lg:mt-0 text-[#F5F5F5] lg:gap-5 flex flex-col items-center lg:flex-row font-thin  lg:h-[18rem] ">
         <div className="flex-4 p-10 absolute hidden bottom-[190px] left-0 right-0 lg:flex flex-row lg:flex-col  gap-3 items-center justify-center cursor-pointer ">
             <svg width="18" height="19" viewBox="0 0 18 19" fill="black" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.1425 2H5.8575C3.1275 2 1.5 3.6275 1.5 6.3575V12.635C1.5 15.3725 3.1275 17 5.8575 17H12.135C14.865 17 16.4925 15.3725 16.4925 12.6425V6.3575C16.5 3.6275 14.8725 2 12.1425 2ZM9 12.41C7.395 12.41 6.09 11.105 6.09 9.5C6.09 7.895 7.395 6.59 9 6.59C10.605 6.59 11.91 7.895 11.91 9.5C11.91 11.105 10.605 12.41 9 12.41ZM13.44 5.66C13.4025 5.75 13.35 5.8325 13.2825 5.9075C13.2075 5.975 13.125 6.0275 13.035 6.065C12.8985 6.12294 12.7478 6.1389 12.6022 6.11085C12.4566 6.08279 12.3227 6.012 12.2175 5.9075C12.15 5.8325 12.0975 5.75 12.06 5.66C12.0215 5.56986 12.0011 5.47302 12 5.375C12 5.2775 12.0225 5.18 12.06 5.09C12.0975 4.9925 12.15 4.9175 12.2175 4.8425C12.39 4.67 12.6525 4.5875 12.8925 4.64C12.945 4.6475 12.99 4.6625 13.035 4.685C13.08 4.7 13.125 4.7225 13.17 4.7525C13.2075 4.775 13.245 4.8125 13.2825 4.8425C13.35 4.9175 13.4025 4.9925 13.44 5.09C13.4775 5.18 13.5 5.2775 13.5 5.375C13.5 5.4725 13.4775 5.57 13.44 5.66Z" fill="#F5F5F5" />
@@ -17,10 +17,10 @@ const About = () => {
             </svg>
 
         </div>
-        <div className="lg:text-[13px] text-md flex p-5 border-b-[0.5px] border-[#F5F5F5] text-justify flex-1 flex-col lg:pr-[10.9rem] lg:pl-10  items-center  lg:justify-start lg:pt-5 lg:leading-7 leading-8">
+        <div className="lg:text-[13px] md:text-xl text-md flex pb-16 p-5 md:p-24 border-b-[0.5px] border-[#F5F5F5] text-justify flex-1 flex-col lg:pr-[10.9rem] lg:pl-10  items-center  lg:justify-start lg:pt-5 lg:leading-7 md:leading-[3rem] leading-8">
             <p className="mb-3 space-y-2 font-thin text-center">
                 Hello, i'm <br />
-                <span className="text-2xl font-semibold">Fadejimi Ogunleye.</span> <br />
+                <span className="text-2xl md:text-3xl font-semibold">Fadejimi Ogunleye.</span> <br />
                 a Creative Photographer  📸 <br />
                 founder of <span className="text-[#DEC649] font-light">CartiZn .</span>
             </p>
@@ -29,7 +29,7 @@ const About = () => {
                 different techniques and perspectives to create unique and visually striking images. From vivid colors and dramatic
                 lighting to minimalist compositions, I believe in pushing the boundaries of creativity to make each photograph a work of art.
             </p>
-            <div className="flex-4  lg:hidden flex flex-row lg:flex-col mt-3  gap-3 items-center justify-center cursor-pointer ">
+            <div className="flex-4  lg:hidden flex flex-row lg:flex-col mt-10  gap-8 items-center justify-center cursor-pointer ">
             <svg width="18" height="19" viewBox="0 0 18 19" fill="black" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.1425 2H5.8575C3.1275 2 1.5 3.6275 1.5 6.3575V12.635C1.5 15.3725 3.1275 17 5.8575 17H12.135C14.865 17 16.4925 15.3725 16.4925 12.6425V6.3575C16.5 3.6275 14.8725 2 12.1425 2ZM9 12.41C7.395 12.41 6.09 11.105 6.09 9.5C6.09 7.895 7.395 6.59 9 6.59C10.605 6.59 11.91 7.895 11.91 9.5C11.91 11.105 10.605 12.41 9 12.41ZM13.44 5.66C13.4025 5.75 13.35 5.8325 13.2825 5.9075C13.2075 5.975 13.125 6.0275 13.035 6.065C12.8985 6.12294 12.7478 6.1389 12.6022 6.11085C12.4566 6.08279 12.3227 6.012 12.2175 5.9075C12.15 5.8325 12.0975 5.75 12.06 5.66C12.0215 5.56986 12.0011 5.47302 12 5.375C12 5.2775 12.0225 5.18 12.06 5.09C12.0975 4.9925 12.15 4.9175 12.2175 4.8425C12.39 4.67 12.6525 4.5875 12.8925 4.64C12.945 4.6475 12.99 4.6625 13.035 4.685C13.08 4.7 13.125 4.7225 13.17 4.7525C13.2075 4.775 13.245 4.8125 13.2825 4.8425C13.35 4.9175 13.4025 4.9925 13.44 5.09C13.4775 5.18 13.5 5.2775 13.5 5.375C13.5 5.4725 13.4775 5.57 13.44 5.66Z" fill="#F5F5F5" />
             </svg>
