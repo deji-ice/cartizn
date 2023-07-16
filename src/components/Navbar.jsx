@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 const Navbar = () => {
-  return <div className="flex border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] font-thin  fixed top-0 left-0 right-0 text-sm z-50 backdrop-blur-sm lg:backdrop-blur-none">
+  return <div className="flex border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] font-thin  fixed top-0 left-0 right-0 text-sm z-50 backdrop-blur-sm lg:static lg:backdrop-blur-none">
     <div className="border-[0.5px] md:flex-8 flex-9 border-[#F5F5F5] p-2 flex items-center ">
       <svg className="h-5" width="55" height="23" viewBox="0 0 55 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_19_5127)">
