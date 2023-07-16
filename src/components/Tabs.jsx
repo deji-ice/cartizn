@@ -3,28 +3,28 @@ import mail from "../assets/image 1359.png"
 import camera from "../assets/image 1359 (2).png"
 import fire from "../assets/image 1359 (3).png"
 
-const Tab = [
-    {
-        content: "CONCERTS & EVENTS",
-        image: fire,
-    },
-    {
-        content: "PORTRAIT SHOOT",
-        image: camera,
-    },
-    {
-        content: "CREATIVE SHOOT",
-        image: sparkles,
-    },
-    {
-        content: "LET'S TALK",
-        image: mail,
-    },
-];
 
 
 // eslint-disable-next-line react/prop-types
 const Tabs = ({ activeTab, onTabClick }) => {
+    const Tab = [
+        {
+            content: "CONCERTS & EVENTS",
+            image: fire,
+        },
+        {
+            content: "PORTRAIT SHOOT",
+            image: camera,
+        },
+        {
+            content: "CREATIVE SHOOT",
+            image: sparkles,
+        },
+        {
+            content: "LET'S TALK",
+            image: mail,
+        },
+    ];
     return <div className="grid grid-cols-2">
         {
             Tab.map((tab, index) => (
