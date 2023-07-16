@@ -16,46 +16,47 @@ const Explore = () => {
 
     useEffect(() => {
         const intervals = [];
-
-        if (data1) {
-            const interval1 = setInterval(() => {
-                setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
-            }, 2000);
-            intervals.push(interval1);
+      
+        if (data1 && data1.length > 0) {
+          const interval1 = setInterval(() => {
+            setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
+          }, 2000);
+          intervals.push(interval1);
         }
-
-        if (data2) {
-            const interval2 = setInterval(() => {
-                setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
-            }, 2500);
-            intervals.push(interval2);
+      
+        if (data2 && data2.length > 0) {
+          const interval2 = setInterval(() => {
+            setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
+          }, 2500);
+          intervals.push(interval2);
         }
-
-        if (data3) {
-            const interval3 = setInterval(() => {
-                setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
-            }, 3000);
-            intervals.push(interval3);
+      
+        if (data3 && data3.length > 0) {
+          const interval3 = setInterval(() => {
+            setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
+          }, 3000);
+          intervals.push(interval3);
         }
-
-        if (data4) {
-            const interval4 = setInterval(() => {
-                setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
-            }, 3200);
-            intervals.push(interval4);
+      
+        if (data4 && data4.length > 0) {
+          const interval4 = setInterval(() => {
+            setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
+          }, 3200);
+          intervals.push(interval4);
         }
-
-        if (data5) {
-            const interval5 = setInterval(() => {
-                setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
-            }, 3500);
-            intervals.push(interval5);
+      
+        if (data5 && data5.length > 0) {
+          const interval5 = setInterval(() => {
+            setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
+          }, 3500);
+          intervals.push(interval5);
         }
-
+      
         return () => {
-            intervals.forEach((interval) => clearInterval(interval));
+          intervals.forEach((interval) => clearInterval(interval));
         };
-    }, []);
+      }, []);
+      
 
 
 
