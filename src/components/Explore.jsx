@@ -97,20 +97,20 @@ const Explore = () => {
             <img className="" src={import.meta.env.VITE_API_UPLOAD_URL + data5[currentIndex5]?.attributes.url}  />
         </div> */}
 
-        <div className="flex flex-1 gap-0 ease-linear duration-500 ">
+        <div className="flex flex-col lg:flex-row flex-1 gap-0 ease-linear duration-500 ">
             {/* import.meta.env.VITE_API_UPLOAD_URL is needed for images to show  */}
             <img className="" src={data1[currentIndex1]} />
-            <div className="flex flex-col  ">
+            <div className="flex flex-row lg:flex-col  ">
                 <img className="flex-grow object-cover" src={data2[currentIndex2]} />
                 <img className="flex-grow object-cover" src={data3[currentIndex3]} />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-row lg:flex-col ">
                 <img className="flex-grow object-cover" src={data4[currentIndex4]} />
                 <img className="flex-grow object-cover" src={data5[currentIndex5]} />
             </div>
 
         </div>
-        <div className="relative  flex flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
+        <div className="relative hidden lg:flex  flex-1  items-center hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
             <h1 className="text-4xl w-[30rem] p-10 text-right qarkine leading-[6rem] ">
                 Explore My World
