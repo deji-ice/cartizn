@@ -60,9 +60,9 @@ const Explore = () => {
 
 
 
-    return <section className="flex ">
+    return <section className="flex lg:max-h-[20rem] ">
         <div className="flex flex-col lg:flex-row flex-1 gap-0 ease-linear duration-500 ">
-            <img className="" src={data1[currentIndex1]} />
+            <img className="lg:shrink flex" src={data1[currentIndex1]} />
             <div className="flex flex-row lg:flex-col  ">
                 <img className="flex-grow object-cover" src={data2[currentIndex2]} />
                 <img className="flex-grow object-cover" src={data3[currentIndex3]} />
@@ -74,7 +74,7 @@ const Explore = () => {
         </div>
         <div className="relative hidden lg:flex  flex-1  items-center justify-center  hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
-            <h1 className="text-5xl pl-10 pr-20 text-right flex items-center qarkine leading-[8rem] ">
+            <h1 className="text-4xl pl-10 pr-20 text-right flex items-center qarkine leading-[6rem] ">
                 Explore My World
             </h1>
             <div className=" flex flex-col gap-5 items-center justify-center pr-10">

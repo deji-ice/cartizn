@@ -17,14 +17,14 @@ const About = () => {
             </svg>
 
         </div>
-        <div className="lg:text-[13px] md:text-xl text-md flex pb-16 p-5 md:p-24 lg:p-0 lg:border-0 border-b-[0.5px] border-[#F5F5F5] text-justify lg:text-start flex-1 flex-col  lg:pr-[10.9rem] lg:pl-0  items-center lg:items-start  lg:justify-center lg:pt-0 lg:leading-7 md:leading-[3rem] leading-8">
+        <div className="lg:text-[13px] md:text-xl text-md flex pb-16 p-5 md:p-24 lg:p-0 lg:border-0 border-b-[0.5px] border-[#F5F5F5] text-justify lg:text-start flex-1 flex-col  xl:pr-[10.9rem] lg:pl-0  items-center lg:items-start  lg:justify-center lg:pt-0 lg:leading-7 md:leading-[3rem] leading-8">
             <p className="mb-3 pt-10 lg:pt-0 space-y-2 font-thin text-center lg:text-start">
                 Hello, i'm <br />
-                <span className="text-2xl lg:text-2xl md:text-3xl font-semibold">Fadejimi Ogunleye.</span> <br />
+                <span className="text-2xl lg:text-xl xl:text-2xl md:text-3xl font-semibold">Fadejimi Ogunleye.</span> <br />
                 a Creative Photographer  📸 <br />
                 founder of <span className="text-[#DEC649] font-light">CartiZn .</span>
             </p>
-            <p className="font-thin text-center lg:pr-5 lg:text-start">With a passion for capturing the beauty of the world through my lens. Photography is more than just a hobby for
+            <p className="font-thin text-center lg:pr-1 xl:pr-5 lg:text-start">With a passion for capturing the beauty of the world through my lens. Photography is more than just a hobby for
                 me—it's a way of life. My photography style is a blend of artistry and storytelling. I love experimenting with
                 different techniques and perspectives to create unique and visually striking images. From vivid colors and dramatic
                 lighting to minimalist compositions, I believe in pushing the boundaries of creativity to make each photograph a work of art.
