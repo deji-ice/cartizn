@@ -30,12 +30,12 @@ const Tabs = ({ activeTab, onTabClick }) => {
             Tab.map((tab, index) => (
                 <div
                     key={index}
-                    className={`p-4 flex items-center justify-center text-xs border-[0.5px] gap-1
+                    className={`p-4 py-5 md:py-8 flex items-center justify-center text-xs md:text-xl border-[0.5px] gap-1
                 text-center border-[#F5F5F5] ${activeTab === index ? 'text-black bg-white font-semibold' : 'text-[#F5F5F5]'
                         }`}
                     onClick={() => onTabClick(index)}
                 >
-                    {tab.content} <img className="h-3" src={tab.image} />
+                    {tab.content} <img className="h-3 md:h-5" src={tab.image} />
                 </div>
             ))
         }

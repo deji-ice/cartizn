@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import fire from "../assets/image 1359 (3).png"
-import { Cloudinary } from "@cloudinary/url-gen";
 
 
 const Concerts = () => {
@@ -61,15 +60,13 @@ const Concerts = () => {
         };
     }, []);
 
-
-
     return <div className="flex flex-col h-screen">
-        <div className="flex flex-col py-10 px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5]   ">
+        <div className="flex flex-col py-10 md:py-20 px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
             <div className="items-center justify-center flex  gap-2">
-                <h1 className="qarkine text-[16px] ">CONCERTS &  EVENTS</h1>
-                <img src={fire} className="h-5" />
+                <h1 className="qarkine text-[16px] md:text-2xl ">CONCERTS & EVENTS</h1>
+                <img src={fire} className="h-5 md:h-10" />
             </div>
-            <p className="font-thin text-center text-sm mt-4 leading-6 px-4">
+            <p className="font-thin text-center text-sm mt-4 leading-6 px-4 md:px-10 md:text-xl md:mt-8 md:leading-9">
                 "Through the lens, I capture the rhythm, the energy, and the raw passion of the stage. Each click of the shutter immortalizes the magic of music, preserving the euphoria and the unforgettable moments that ignite the soul."
             </p>
         </div>
