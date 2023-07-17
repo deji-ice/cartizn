@@ -1,4 +1,7 @@
 import Concerts from "../components/Concerts";
+import CreativeShoots from "../components/CreativeShoots";
+import LetsTalk from "../components/LetsTalk";
+import Portraits from "../components/Portraits";
 import Tabs from "../components/Tabs";
 import { useState } from 'react';
 
@@ -12,21 +15,20 @@ const Catalog = () => {
     const renderContentComponent = () => {
         switch (activeTab) {
             case 0:
-                return <ConcertsEventsComponent />;
+                return <Concerts />;
             case 1:
-                return <PortraitShootComponent />;
+                return <Portraits />;
             case 2:
-                return <CreativeShootComponent />;
+                return <CreativeShoots />;
             case 3:
-                return <LetsTalkComponent />;
+                return <LetsTalk />;
             default:
-                return null;
+                return <Concerts/>;
         }
     };
     return <div>
         <Tabs activeTab={activeTab} onTabClick={handleTabClick} />
-        {/* <div className="content-wrapper">{renderContentComponent()}</div> */}
-        <Concerts/>
+        <div className="content-wrapper">{renderContentComponent()}</div>
     </div>;
 };
 
