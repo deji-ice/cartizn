@@ -84,7 +84,7 @@ const Portraits = () => {
             <img className=" border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
 
-            <div className="flex flex-1 items-center ">
+            <div className="flex flex-2 items-center ">
             <img className=" border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
             <img className=" border-[0.5px] border-[#F5F5F5] " src={data5[currentIndex5]} />
             </div>
