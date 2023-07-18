@@ -68,7 +68,7 @@ const Concerts = () => {
             </div>
             <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex  gap-2 xl:gap-2 lg:gap-0">
-                    <h1 className="qarkine text-[16px] md:text-2xl lg:text-xl ">
+                    <h1 className="qarkine text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  ">
              CONCERTS <span className="hidden md:inline">&nbsp;</span> & <span className="hidden md:inline">&nbsp;</span>EVENTS
                 </h1>
                     <img src={fire} className="h-5 md:h-10 md:pb-2" />
