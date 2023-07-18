@@ -60,23 +60,33 @@ const Portraits = () => {
         };
     }, []);
 
-    return <div className="flex flex-col h-screen">
-        <div className="lg:flex  ">
+    return <div className="flex flex-col h-screen xl:h-fit">
+        <div className="lg:flex xl:h-fit ">
             <div className="hidden xl:flex xl:flex-2  ">
                 <img className="object-contain  w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
-            </div>
-            <div className="  flex flex-col py-10 md:py-20 px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
-                <div className="items-center justify-center flex  gap-2 lg:gap-0">
-                    <h1 className="qarkine text-[16px] md:text-2xl lg:text-xl ">
-                        PORTRAIT &nbsp; SHOOT
+            <div className="  flex flex-col py-10 md:py-20 px-3 xl:px-0 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
+                <div className="items-center  justify-center flex xl:gap-2 gap-2 lg:gap-0">
+                    <h1 className="qarkine  text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  ">
+                        PORTRAIT&nbsp;SHOOT
                     </h1>
-                    <img src={camera} className="h-5 md:h-10" />
+                    <img src={camera} className="h-5 md:h-10 md:pb-2" />
                 </div>
                 <p className="font-thin text-center text-sm mt-4 leading-6 px-4 md:px-10 md:text-xl md:mt-8 md:leading-9
-                            lg:px-20 lg:text-xl lg:leading-10">
+                            lg:px-20 lg:text-xl lg:leading-10 xl:text-sm xl:px-32 xl:mt-2 xl:font-thin xl:leading-relaxed">
                     "Every portrait tells a story, revealing the beauty, vulnerability, and strength within each individual."
                 </p>
+            </div>
+                            <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+            </div>
+        </div>
+        <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
+            <div className="flex flex-1 items-center justify-center">
+            <img className=" border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+            </div>
+
+            <div className="flex flex-2 items-center ">
+            <img className=" border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
+            <img className=" border-[0.5px] border-[#F5F5F5] " src={data5[currentIndex5]} />
             </div>
         </div>
         <div className="m-auto xl:hidden  ">
