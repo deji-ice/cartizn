@@ -60,11 +60,10 @@ const Portraits = () => {
         };
     }, []);
 
-    return <div className="flex flex-col h-screen">
-        <div className="lg:flex  ">
+    return <div className="flex flex-col h-screen xl:h-fit">
+        <div className="lg:flex xl:h-fit ">
             <div className="hidden xl:flex xl:flex-2  ">
                 <img className="object-contain  w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-     
             <div className="  flex flex-col py-10 md:py-20 px-3 xl:px-0 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center  justify-center flex xl:gap-2 gap-2 lg:gap-0">
                     <h1 className="qarkine  text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  ">
