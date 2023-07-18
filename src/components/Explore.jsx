@@ -61,6 +61,7 @@ const Explore = () => {
 
 
     return <section className="flex lg:max-h-[20rem] ">
+      {/* TODO */}
         <div className="flex flex-col lg:flex-row flex-1 gap-0 ease-linear duration-500  ">
             <img className="lg:shrink flex" src={data1[currentIndex1]} />
             <div className="flex  xl:h-fit">
