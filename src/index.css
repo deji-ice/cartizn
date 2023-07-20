@@ -11,7 +11,14 @@
 }
 
 body {
-  background: #1f1e1e;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Set a fallback background color */
+  background-image: url('film-grain.png'); /* Path to your film grain image */
+  background-blend-mode: screen; /* Blend the film grain with the background color */
+  background-size: cover;
+  background-repeat: repeat;
+
 }
 .qarkine {
   font-family: "Qarkine", sans-serif;

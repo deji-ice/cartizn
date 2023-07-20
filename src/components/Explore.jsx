@@ -77,7 +77,7 @@ const Explore = () => {
         </div>
         <div className="relative hidden lg:flex  flex-1  items-center justify-center  hover:text-black my-svg hover:bg-white text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
-            <h1 className="text-4xl pl-10 pr-20 text-right flex items-center qarkine leading-[6rem] ">
+            <h1 className="text-4xl pl-10 pr-20 text-right flex items-center xl:px-16 xl:pr-20 qarkine leading-[6rem] ">
                 Explore My World
             </h1>
             <div className=" flex flex-col gap-5 items-center justify-center pr-10">
