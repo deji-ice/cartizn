@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, useRef } from "react";
+import gsap from 'gsap';
 
 const Explore = () => {
+  const imageRef = useRef(null);
+
     const data1 = ["https://i.imgur.com/kQEx2GY.png", "https://i.imgur.com/Q5CtCJi.png", "https://i.imgur.com/i7A133P.png"];
     const data2 = ["https://i.imgur.com/a4Abq7x.png", "https://i.imgur.com/fyfzvnX.png", "https://i.imgur.com/rcWZdSy.png"];
     const data3 = ["https://i.imgur.com/JcbsGag.png", "https://i.imgur.com/KMLqgha.png", "https://i.imgur.com/3hRiyi3.png"];
@@ -12,58 +14,58 @@ const Explore = () => {
     const [currentIndex3, setCurrentIndex3] = useState(0);
     const [currentIndex4, setCurrentIndex4] = useState(0);
     const [currentIndex5, setCurrentIndex5] = useState(0);
-
+    const [nextImage, setNextImage] = useState(null);
 
     useEffect(() => {
-        const intervals = [];
-      
-        if (data1 && data1.length > 0) {
-          const interval1 = setInterval(() => {
-            setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
-          }, 2000);
-          intervals.push(interval1);
-        }
-      
-        if (data2 && data2.length > 0) {
-          const interval2 = setInterval(() => {
-            setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
-          }, 2500);
-          intervals.push(interval2);
-        }
-      
-        if (data3 && data3.length > 0) {
-          const interval3 = setInterval(() => {
-            setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
-          }, 3000);
-          intervals.push(interval3);
-        }
-      
-        if (data4 && data4.length > 0) {
-          const interval4 = setInterval(() => {
-            setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
-          }, 3200);
-          intervals.push(interval4);
-        }
-      
-        if (data5 && data5.length > 0) {
-          const interval5 = setInterval(() => {
-            setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
-          }, 3500);
-          intervals.push(interval5);
-        }
-      
-        return () => {
-          intervals.forEach((interval) => clearInterval(interval));
-        };
-      }, []);
-      
+      const fadeIn = () => {
+        gsap.fromTo(imageRef.current, { opacity: 0.3 }, { opacity: 1, duration: 2, ease: "easeInOut" });
+      };
+  
+      const fadeOut = () => {
+        gsap.to(imageRef.current, { opacity: 0.2, duration:  2, ease: "easeInOut", onComplete: changeImage });
+      };
+  
+      const changeImage = () => {
+        fadeIn();
+        setNextImage(data1[currentIndex1]);
+      };
+  
+      const interval1 = setInterval(() => {
+        setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
+        fadeOut();
+      }, 4000); // Adjust the interval for smoother transition
+  
+      const interval2 = setInterval(() => {
+        setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
+      }, 2500);
+  
+      const interval3 = setInterval(() => {
+        setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
+      }, 3000);
+  
+      const interval4 = setInterval(() => {
+        setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
+      }, 3200);
+  
+      const interval5 = setInterval(() => {
+        setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
+      }, 3500);
+  
+      return () => {
+        clearInterval(interval1);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        clearInterval(interval5);
+      };
+    }, [currentIndex1]);
 
 
 
     return <section className="flex lg:max-h-[20rem] ">
       {/* TODO */}
         <div className="flex flex-col lg:flex-row flex-1 gap-0 ease-linear duration-500  ">
-            <img className="lg:shrink flex" src={data1[currentIndex1]} />
+            <img ref={imageRef} className="lg:shrink flex" src={nextImage ||data1[currentIndex1]} />
             <div className="flex  xl:h-fit">
             <div className="flex flex-row lg:flex-col  ">
                 <img className="flex-grow xl:grow-0 object-cover" src={data2[currentIndex2]} />
