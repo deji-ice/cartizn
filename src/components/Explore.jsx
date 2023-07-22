@@ -66,19 +66,19 @@ const Explore = () => {
   }, [currentIndex1]);
 
   const handleHover = (e) => {
-    gsap.fromTo(
-      e.target,
-      { scaleX: 0 },
-      { scaleX: 1, duration: 0.5, ease: 'power2.inOut' }
-    );
+    gsap.to(e.target, {
+      duration: 0.5,
+      scaleX: 1,
+      ease: 'power2.inOut',
+    });
   };
 
   const handleHoverOut = (e) => {
-    gsap.fromTo(
-      e.target,
-      { scaleX: 1 },
-      { scaleX: 0, duration: 0.5, ease: 'power2.inOut' }
-    );
+    gsap.to(e.target, {
+      duration: 0.5,
+      scaleX: 0,
+      ease: 'power2.inOut',
+    });
   };
 
   return <section className="flex lg:max-h-[20rem] gap-0 p-0">
@@ -97,10 +97,8 @@ const Explore = () => {
       </div>
     </div>
 
-    <div className="relative hidden lg:flex xl:flex-1  items-center justify-center  hover:text-black my-svg  text-white border-[0.5px]
-         border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer"
-         onMouseEnter={handleHover}
-         onMouseLeave={handleHoverOut}>
+    <div className="relative hidden lg:flex xl:flex-1  items-center justify-center  hover:text-black my-svg hover:bg-white text-white border-[0.5px]
+         border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer">
       {isXlScreen ? (
         <Link to={"/catalog"} >
           <h1 className="text-4xl pl-10 pr-20 text-right flex items-center xl:px-16 xl:pr-20 qarkine leading-[6rem] ">
