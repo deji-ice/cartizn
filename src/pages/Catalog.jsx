@@ -5,6 +5,7 @@ import LetsTalk from "../components/LetsTalk";
 import Portraits from "../components/Portraits";
 import Tabs from "../components/Tabs";
 import { useEffect, useState } from 'react';
+import Footer from "../components/Footer";
 
 const Catalog = () => {
     useEffect(() => {
@@ -34,6 +35,7 @@ const Catalog = () => {
     return <div className="body">
         <Tabs activeTab={activeTab} onTabClick={handleTabClick} />
         <div className="content-wrapper">{renderContentComponent()}</div>
+        <Footer />
     </div>;
 };
 
