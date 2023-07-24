@@ -1,11 +1,11 @@
 
 
 const Footer = () => {
-  return <div className=" relative h-10  w-screen font-thin text-xs text-[#F5F5F5] flex items-center justify-center border-[0.5px]
+  return <div className=" flex justify-center items-center px-2 py-3 lg:py-5 w-screen  text-[#F5F5F5]  border-[0.5px]
   border-[#F5F5F5]">
-    <p  className=" max-h-20 absolute">
-    @ cartizn - All Rights Resevered - Designed by <span className="text-[#DEC649] font-light">&nbsp;Isreal Olorutomi.</span> - 
-    Developed by <span className="text-[#DEC649] font-light">&nbsp;Ayodeji Atanda.</span>
+    <p  className="  text-center text-[10px] lg:text-xs font-thin">
+    &copy; cartizn &bull; All Rights Resevered &bull; Designed by <span className="text-[#DEC649] font-light">&nbsp;Isreal Olorutomi.</span> &bull; 
+    Developed by <a href="https://ayodejiatanda.vercel.app/" rel="noreferrer" target="_blank" className="text-[#DEC649] font-light hover:pointer">&nbsp;Ayodeji Atanda.</a>
     </p>
   </div>;
 }
