@@ -2,7 +2,7 @@
 import carti from "../assets/Property 1=Variant2carti.png"
 
 const About = () => {
-    return <section className="relative mt-20 md:mt-10 lg:mt-0 text-[#F5F5F5] lg:gap-5 flex flex-col items-center lg:items-stretch lg:flex-row font-thin  ">
+    return <section className="relative xl:h-[50%] mt-20 md:mt-10 lg:mt-0 text-[#F5F5F5] lg:gap-5 flex flex-col items-center lg:items-stretch lg:flex-row font-thin  ">
         <div className="flex-5 p-10 absolute lg:static hidden bottom-[190px] left-0 right-0 lg:flex flex-row lg:flex-col  gap-5 items-center justify-center">
            <a href="https://instagram.com/cartizn?igshid=MmIzYWVlNDQ5Yg==" target="_blank" rel="noreferrer">
             <svg  className="hover:cursor-pointer"  width="18" height="19" viewBox="0 0 18 19" fill="black" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@ const About = () => {
 
 
         <div className="lg:flex-4 flex grayscale hover:filter-none   hover:ease-linear duration-500">
-            <img src={carti} alt="Fadejimi Ogunleye" className=" border-r-[0.5px] object-contain  border-[#F5F5F5]" />
+            <img src={carti} alt="Fadejimi Ogunleye" className=" border-r-[0.5px] object-contain xl:h-[20rem]  border-[#F5F5F5]" />
         </div>
     </section>;
 };
