@@ -60,7 +60,7 @@ const Concerts = () => {
         };
     }, []);
 
-    return <div className="flex flex-col h-screen xl:h-fit">
+    return <div className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
                 <img className="object-contain  border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
