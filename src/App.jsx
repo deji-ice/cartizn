@@ -17,7 +17,7 @@ function App() {
 
   // Render the appropriate component based on the screen size
   const content = isXlScreen ? (
-    <div className='h-screen xl:h-screen xl:overflow-hidden'>
+    <div className=' xl:overflow-hidden'>
       <RouterProvider router={createBrowserRouter([
         {
           path: "/",
