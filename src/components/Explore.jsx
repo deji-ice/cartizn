@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from '@react-hook/media-query';
 import gsap from 'gsap';
 import { Link } from "react-router-dom";
-import { TweenMax } from "gsap/gsap-core";
+import { motion } from 'framer-motion';
+
 
 const Explore = () => {
   let imageRef = useRef(null);
@@ -40,7 +41,7 @@ const Explore = () => {
     const interval1 = setInterval(() => {
       // fadeOut()
       setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
- 
+
     }, 4000); // Adjust the interval for smoother transition
 
     const interval2 = setInterval(() => {
@@ -67,59 +68,62 @@ const Explore = () => {
       clearInterval(interval5);
     };
   }, [currentIndex1]);
-  
+
+
+
 
 
   const handleHover = () => {
-    // gsap.set(explore.current,{backgroundColor:"pink", x:1 , duration:3})
-   gsap.set(explore.current, { x: "100%" ,backgroundColor:"pink"}, )
+    gsap.to(explore.current, { width: "100%", duration: 1, ease: 'power2.inOut' });
   };
 
   const handleHoverOut = () => {
-    gsap.to(explore.current, {backgroundColor:"black", x: "0", zIndex:0, duration: 4.5, ease: "power1.inOut" });
+    gsap.to(explore.current, { width: "0%", duration: 1, ease: 'power2.inOut' });
   };
-
-  return <section className="flex lg:max-h-[20rem] xl:h-[50%]  gap-0 p-0">
+  return <section className="flex  xl:h-[30%]  gap-0 p-0">
     {/* TODO */}
     <div className="flex flex-col lg:flex-row xl:flex-1  w-screen  ease-linear duration-500 xl:overflow-x-clip  ">
       <img ref={imageRef} className="lg:grow  flex xl:flex-1" src={data1[currentIndex1]} />
       <div className="flex flex-col lg:flex-row  xl:flex-4 xl:whitespace-nowrap">
         <div className="flex flex-row lg:flex-col  ">
-          <img className="flex-grow flex-1 object-cover xl:max-h-40 xl:min-w-[13rem]" src={data2[currentIndex2]} />
-          <img className="flex-grow flex-1 object-cover xl:max-h-40 xl:min-w-[13rem]" src={data3[currentIndex3]} />
+          <img className="flex-grow flex-1 object-cover " src={data2[currentIndex2]} />
+          <img className="flex-grow flex-1 object-cover " src={data3[currentIndex3]} />
         </div>
         <div className="flex flex-row lg:flex-col ">
-          <img className="flex-grow flex-1 object-cover xl:max-h-40  xl:min-w-[13rem]" src={data4[currentIndex4]} />
-          <img className="flex-grow flex-1 object-cover xl:max-h-40  xl:min-w-[13rem]" src={data5[currentIndex5]} />
+          <img className="flex-grow flex-1 object-cover " src={data4[currentIndex4]} />
+          <img className="flex-grow flex-1 object-cover " src={data5[currentIndex5]} />
         </div>
       </div>
     </div>
 
-    <div
-          // onMouseEnter={handleHover}
-          // onMouseLeave={handleHoverOut}
-    ref={el => {explore  = el}} className="relative hidden lg:flex xl:flex-1  items-center justify-center  hover:text-black my-svg  text-white border-[0.5px]
+    <motion.div
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHoverOut}
+      className="relative hidden lg:flex xl:flex-1  items-center justify-center  my-svg hover:text-black text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer"
     >
+      <div
+        ref={explore} className="bg-white  pink h-full absolute left-0 ">
+      </div>
       {isXlScreen ? (
         <Link to={"/catalog"} >
-          <h1 className="static z-20 text-5xl pl-10 mr-20 text-right flex items-center  qarkine leading-[8rem] ">
+          <h1 className="relative z-20 text-5xl pl-10 mr-20 text-right flex items-center  qarkine leading-[8rem] ">
             Explore My World
           </h1>
         </Link>)
         : (
-          <h1 className=" text-4xl pl-10 pr-20 text-right flex items-center xl:px-16 xl:pr-20 qarkine leading-[6rem] ">
+          <h1 className=" relative text-3xl pl-10 pr-20 text-right flex items-center xl:px-16 xl:pr-20 qarkine leading-[6rem] ">
             Explore My World
           </h1>
         )}
-      <div className=" flex flex-col gap-5 items-center justify-center pr-10">
+      <div className=" lg:relative flex flex-col gap-5 items-center justify-center pr-10">
         <svg width="24" height="200" viewBox="0 0 24 132" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M12 0.833333C10.5272 0.833333 9.33333 2.02724 9.33333 3.5C9.33333 4.97276 10.5272 6.16667 12 6.16667C13.4728 6.16667 14.6667 4.97276 14.6667 3.5C14.6667 2.02724 13.4728 0.833333 12 0.833333ZM11.5 3.5L11.5 97.5L12.5 97.5L12.5 3.5L11.5 3.5Z" fill="#F5F5F5" />
           <path className="specific-path" d="M16.06 120.4L13.44 123.02C12.67 123.79 11.41 123.79 10.64 123.02L4.12996 116.5M19.96 116.5L18.92 117.54" stroke="#DEC649" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
 
-    </div>
+    </motion.div>
   </section>;
 };
 
