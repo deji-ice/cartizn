@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import mail from "../assets/image 1359.png"
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const LetsTalk = () => {
   const [name, setName] = useState("");
@@ -13,6 +14,34 @@ const LetsTalk = () => {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Message:", message);
+
+    // Your EmailJS configuration - replace with your actual values
+    const emailJsConfig = {
+      serviceID: "service_g66m58z",
+      templateID: "template_2g1kjhk",
+      userID: "w2NRGKSFwV4GT8-3z",
+    };
+
+    emailjs
+      .send(emailJsConfig.serviceID, emailJsConfig.templateID, {
+        from_name: name,
+        from_email: email,
+        message: message,
+      }, emailJsConfig.userID)
+      .then(
+        (response) => {
+          console.log("Email sent successfully:", response);
+          // Reset the form after successful submission
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+        }
+      );
+  
+    
 
     // Clear form fields after submission
     setName("");
