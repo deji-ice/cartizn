@@ -71,7 +71,7 @@ const Concerts = ( { isFromRight } ) => {
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
                 <img className="object-contain  border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="object-contain border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img className="object-contain border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
             <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex  gap-2 xl:gap-2 lg:gap-0">
@@ -89,7 +89,7 @@ const Concerts = ( { isFromRight } ) => {
 
         <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center justify-center">
-            <img className=" border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+            <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
 
             <div className="flex flex-2 items-center ">
