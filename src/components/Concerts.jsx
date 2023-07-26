@@ -63,9 +63,9 @@ const Concerts = ( { isFromRight } ) => {
     }, []);
 
     return     <motion.div
-    initial={{ x: isFromRight ? "100%" : "200%", opacity: 0 }}
+    initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
-    exit={{ x: isFromRight ? "200%" : "100%", opacity: 0 }}
+    exit={{ x: isFromRight ? "-100%" : "100%", opacity: 0 }}
     transition={{ duration: 1.5 }}
      className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
