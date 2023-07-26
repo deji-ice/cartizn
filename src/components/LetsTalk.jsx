@@ -2,8 +2,10 @@
 import mail from "../assets/image 1359.png"
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import { motion } from "framer-motion";
 
-const LetsTalk = () => {
+// eslint-disable-next-line react/prop-types
+const LetsTalk = ({isFromRight}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -48,7 +50,12 @@ const LetsTalk = () => {
     setEmail("");
     setMessage("");
   };
-  return <div className="flex flex-col text-[#F5F5F5] h-screen xl:h-fit xl:mb-10 ">
+  return     <motion.div
+  initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  exit={{ x: isFromRight ? "-100%" : "100%", opacity: 0 }}
+  transition={{ duration: 1.5 }}
+className="flex flex-col text-[#F5F5F5] h-screen xl:h-fit xl:mb-10 ">
     <div className="flex flex-col xl:gap-2 lg:gap-0 py-10 md:py-20 xl:py-10 xl:px-0 px-3 items-center justify-center   ">
       <div className="items-center justify-center flex  gap-2">
         <h1 className="qarkine text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  xl:mt-5">LET'S TALK</h1>
@@ -109,7 +116,7 @@ const LetsTalk = () => {
       </button>
     </form>
 
-  </div>;
+  </motion.div>;
 };
 
 export default LetsTalk;

@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import camera from "../assets/image 1359 (2).png"
+import { motion } from "framer-motion";
 
 
-const Portraits = () => {
+// eslint-disable-next-line react/prop-types
+const Portraits = ({isFromRight}) => {
 
     const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591516/cartizn/portraits/Property_1_Variant4_qei7ag.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591516/cartizn/portraits/Property_1_Variant3_ubu49y.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591516/cartizn/portraits/Property_1_Default_dxmopu.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591516/cartizn/portraits/Property_1_Variant2_xwfkvt.png"];
     const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591653/cartizn/portraits/Property_1_Default_cciayx.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591653/cartizn/portraits/Property_1_Variant3_xhuvwe.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591652/cartizn/portraits/Property_1_Variant4_ec9edv.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689591652/cartizn/portraits/rema_7_j0zakc.png",];
@@ -60,7 +62,13 @@ const Portraits = () => {
         };
     }, []);
 
-    return <div className="flex flex-col xl:h-fit">
+    return <motion.div
+    initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: isFromRight ? "-100%" : "100%", opacity: 0 }}
+    transition={{ duration: 1.5 }}
+ 
+    className="flex flex-col xl:h-fit">
         <div className="lg:flex xl:h-fit ">
             <div className="hidden xl:flex xl:flex-2  ">
                 <img className="object-contain  w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
@@ -98,7 +106,7 @@ const Portraits = () => {
                 <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
-    </div>;
+    </motion.div>;
 };
 
 export default Portraits;

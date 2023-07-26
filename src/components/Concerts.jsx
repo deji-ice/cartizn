@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import fire from "../assets/image 1359 (3).png"
+import { motion } from "framer-motion";
 
 
-const Concerts = () => {
+// eslint-disable-next-line react/prop-types
+const Concerts = ( { isFromRight } ) => {
 
-    const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689541913/cartizn/Property_1_Default_1_yxnras.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/c_fill,q_auto:eco,w_322/v1689548765/cartizn/concert/Property_1_Variant5_fil8wh.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549531/cartizn/concert/Property_1_Variant6_ms0pjh.png"];
-    const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549705/cartizn/concert/Property_1_Default_3_plkxhl.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549706/cartizn/concert/Property_1_Variant3_1_wv5e7w.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549708/cartizn/concert/Property_1_Variant4_tdvm6n.png"];
+    const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/q_100/v1689541913/cartizn/Property_1_Default_1_yxnras.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/c_fill,q_auto:eco,w_322/v1689548765/cartizn/concert/Property_1_Variant5_fil8wh.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549531/cartizn/concert/Property_1_Variant6_ms0pjh.png"];
+    const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/q_100/v1689549705/cartizn/concert/Property_1_Default_3_plkxhl.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549706/cartizn/concert/Property_1_Variant3_1_wv5e7w.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549708/cartizn/concert/Property_1_Variant4_tdvm6n.png"];
     const data3 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550489/cartizn/concert/Property_1_Default_4_mynfe0.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550490/cartizn/concert/Property_1_Variant3_2_ffwbeq.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550487/cartizn/concert/Property_1_Variant2_1_w7mzzh.png"];
     const data4 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550918/cartizn/concert/Property_1_Variant2_3_qaxeqo.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550878/cartizn/concert/Property_1_Variant3_3_lhw2d2.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550881/cartizn/concert/Property_1_Variant4_1_bl2smq.png"];
     const data5 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550887/cartizn/concert/Property_1_Default_5_qywof8.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550890/cartizn/concert/Property_1_Variant2_4_hjh2gp.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550883/cartizn/concert/Property_1_Variant4_2_khipd0.png"];
@@ -60,11 +62,16 @@ const Concerts = () => {
         };
     }, []);
 
-    return <div className="flex flex-col h-fit">
+    return     <motion.div
+    initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: isFromRight ? "-100%" : "100%", opacity: 0 }}
+    transition={{ duration: 1.5 }}
+     className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
                 <img className="object-contain  border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="object-contain border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img className="object-contain border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
             <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex  gap-2 xl:gap-2 lg:gap-0">
@@ -82,7 +89,7 @@ const Concerts = () => {
 
         <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center justify-center">
-            <img className=" border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+            <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
 
             <div className="flex flex-2 items-center ">
@@ -99,7 +106,7 @@ const Concerts = () => {
             <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
-    </div>;
+    </motion.div>;
 };
 
 export default Concerts;
