@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import fire from "../assets/image 1359 (3).png"
+import { motion } from "framer-motion";
 
 
-const Concerts = () => {
+// eslint-disable-next-line react/prop-types
+const Concerts = ( { isFromRight } ) => {
 
     const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689541913/cartizn/Property_1_Default_1_yxnras.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/c_fill,q_auto:eco,w_322/v1689548765/cartizn/concert/Property_1_Variant5_fil8wh.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549531/cartizn/concert/Property_1_Variant6_ms0pjh.png"];
     const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549705/cartizn/concert/Property_1_Default_3_plkxhl.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549706/cartizn/concert/Property_1_Variant3_1_wv5e7w.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549708/cartizn/concert/Property_1_Variant4_tdvm6n.png"];
@@ -60,7 +62,12 @@ const Concerts = () => {
         };
     }, []);
 
-    return <div className="flex flex-col h-fit">
+    return     <motion.div
+    initial={{ x: isFromRight ? "100%" : "200%", opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: isFromRight ? "200%" : "100%", opacity: 0 }}
+    transition={{ duration: 1.5 }}
+     className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
                 <img className="object-contain  border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
@@ -99,7 +106,7 @@ const Concerts = () => {
             <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
-    </div>;
+    </motion.div>;
 };
 
 export default Concerts;
