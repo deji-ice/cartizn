@@ -68,7 +68,11 @@ const Tabs = ({ activeTab, onTabClick }) => {
                         className={`relative p-4 py-5 md:py-8 lg:py-8 lg:p-2 flex items-center justify-center text-xs md:text-xl lg:text-[18px] border-[0.5px] gap-1
               text-center border-[#F5F5F5] hover:cursor-pointer hover:text-black hover:font-semibold ${activeTab === index ? "text-black bg-white font-semibold " : "text-[#F5F5F5]"
                             }`}
-                        onClick={() => onTabClick(index)}
+                          
+                        onClick={() => {
+                            onTabClick(index)
+                            handleHover(index)
+                        }}
                     >
                         {tab.content} <img className="h-3 md:h-5" src={tab.image} />
                     </div>
