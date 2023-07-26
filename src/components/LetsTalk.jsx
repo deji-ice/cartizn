@@ -4,7 +4,8 @@ import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 
-const LetsTalk = (isFromRight) => {
+// eslint-disable-next-line react/prop-types
+const LetsTalk = ({isFromRight}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

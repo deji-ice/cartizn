@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import sparkles from "../assets/image 1359 (1).png"
+import { motion } from "framer-motion";
 
 
-const CreativeShoots = () => {
+// eslint-disable-next-line react/prop-types
+const CreativeShoots = ( {isFromRight} ) => {
 
     const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant3_p77jl3.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant4_l3tl5p.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant2_hh4xtb.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Default_eqyspq.png",];
     const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant4_ycmost.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Default_wyivhk.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant3_pdryuk.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant2_oybbzd.png",];
@@ -60,7 +62,12 @@ const CreativeShoots = () => {
         };
     }, []);
 
-    return <div className="flex flex-col xl:h-fit">
+    return <motion.div
+    initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: isFromRight ? "-100%" : "100%", opacity: 0 }}
+    transition={{ duration: 1.5 }}
+     className="flex flex-col xl:h-fit">
         <div className="lg:flex xl:fit  ">
         <div className="xl:flex-1 xl:px-0 flex flex-col py-10 md:py-20 px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex xl:gap-2 gap-2 lg:gap-0">
@@ -104,7 +111,7 @@ const CreativeShoots = () => {
                 <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
-    </div>;
+    </motion.div>;
 };
 
 export default CreativeShoots;
