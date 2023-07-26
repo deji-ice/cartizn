@@ -18,23 +18,28 @@ const Catalog = () => {
         setActiveTab(index);
     };
 
-    const renderContentComponent = () => {
-        switch (activeTab) {
-            case 0:
-                return <Concerts />;
-            case 1:
-                return <Portraits />;
-            case 2:
-                return <CreativeShoots />;
-            case 3:
-                return <LetsTalk />;
-            default:
-                return <Concerts/>;
-        }
-    };
+    // const renderContentComponent = () => {
+    //     switch (activeTab) {
+    //         case 0:
+    //             return <Concerts />;
+    //         case 1:
+    //             return <Portraits />;
+    //         case 2:
+    //             return <CreativeShoots />;
+    //         case 3:
+    //             return <LetsTalk />;
+    //         default:
+    //             return <Concerts/>;
+    //     }
+    // };
     return <div className="body">
         <Tabs activeTab={activeTab} onTabClick={handleTabClick} />
-        <div className="content-wrapper">{renderContentComponent()}</div>
+        <div className="content-wrapper">
+                {activeTab === 0 && <Concerts isFromRight={false} />}
+                {activeTab === 1 && <Portraits />}
+                {activeTab === 2 && <CreativeShoots isFromRight={true} />}
+                {activeTab === 3 && <LetsTalk isFromRight={true} />}
+            </div>
         <Footer />
     </div>;
 };
