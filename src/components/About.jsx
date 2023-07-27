@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import carti from "../assets/Property 1=Variant2carti.png"
 
 const About = () => {
     return <section className="relative xl:h-[50%] mt-20 md:mt-10 lg:mt-0 text-[#F5F5F5] lg:gap-5 flex flex-col items-center lg:items-stretch lg:flex-row font-thin  ">
@@ -51,7 +50,7 @@ const About = () => {
 
 
         <div className="lg:flex-4 flex grayscale hover:filter-none   hover:ease-linear duration-500">
-            <img src={carti} alt="Fadejimi Ogunleye" className=" border-r-[0.5px] object-contain xl:h-[20rem]  border-[#F5F5F5]" />
+            <img src={"https://res.cloudinary.com/dhvwthnzq/image/upload/v1690495797/cartiznHD/explore/Property_1_Variant2_1_bmumql.png"} alt="Fadejimi Ogunleye" className=" border-r-[0.5px] object-cover max-h-[20rem] md:max-h-[30rem] lg:h-[20rem]  border-[#F5F5F5]" />
         </div>
     </section>;
 };
