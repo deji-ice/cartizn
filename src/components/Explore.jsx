@@ -3,7 +3,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import gsap from 'gsap';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-import odu from "../assets/Property 1=Default (3).png"
+import odu from "../assets/Property 1=Default (6).png"
 
 
 const Explore = () => {
@@ -97,14 +97,14 @@ const Explore = () => {
       </div>
     </div>
 
-    <motion.div
+    <div
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}
       className="relative hidden lg:flex xl:flex-1  items-center justify-center  my-svg hover:text-black text-white border-[0.5px]
          border-[#F5F5F5] hover:ease-linear duration-500 cursor-pointer"
     >
       <div
-        ref={explore} className="bg-white  pink h-full absolute left-0 ">
+        ref={explore} className="bg-white h-full absolute left-0 ">
       </div>
       {isXlScreen ? (
         <Link to={"/catalog"} >
@@ -124,7 +124,7 @@ const Explore = () => {
         </svg>
       </div>
 
-    </motion.div>
+    </div>
   </section>;
 };
 

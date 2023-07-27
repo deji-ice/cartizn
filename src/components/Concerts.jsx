@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import fire from "../assets/image 1359 (3).png"
 import { motion } from "framer-motion";
 
-
 // eslint-disable-next-line react/prop-types
 const Concerts = ( { isFromRight } ) => {
 
