@@ -3,13 +3,14 @@ import { useMediaQuery } from '@react-hook/media-query';
 import gsap from 'gsap';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
+import odu from "../assets/Property 1=Default (3).png"
 
 
 const Explore = () => {
   let imageRef = useRef(null);
   let explore = useRef(null)
 
-  const data1 = ["https://i.imgur.com/kQEx2GY.png", "https://i.imgur.com/Q5CtCJi.png", "https://i.imgur.com/i7A133P.png"];
+  const data1 = [odu, "https://i.imgur.com/Q5CtCJi.png", "https://i.imgur.com/i7A133P.png"];
   const data2 = ["https://i.imgur.com/a4Abq7x.png", "https://i.imgur.com/fyfzvnX.png", "https://i.imgur.com/rcWZdSy.png"];
   const data3 = ["https://i.imgur.com/JcbsGag.png", "https://i.imgur.com/KMLqgha.png", "https://i.imgur.com/3hRiyi3.png"];
   const data4 = ["https://i.imgur.com/Kc5WiJG.png", "https://i.imgur.com/H0pKlzd.png", "https://i.imgur.com/8nEu8Zu.png"];
