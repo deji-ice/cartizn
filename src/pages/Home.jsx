@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 
 const Home = () => {
-  return <div className="lg:overflow-y-clip xl:h-[100%] xl:overflow-hidden relative overflow-x-clip">
+  return <div className="lg:overflow-y-clip hide-scrollbar' xl:h-[100%] xl:overflow-hidden relative overflow-x-clip">
     <Navbar/>
     <About/>
     <Explore/>
