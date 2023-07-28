@@ -6,7 +6,6 @@ import useInterval from "../hooks/useInterval";
 
 
 const Explore = () => {
-  
   let explore = useRef(null)
 
   const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1690493903/cartiznHD/explore/Property_1_Default_xvgshy.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690493890/cartiznHD/explore/Property_1_Variant2_bvgual.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690493890/cartiznHD/explore/Property_1_Variant3_gyylcb.png"];
@@ -36,7 +35,7 @@ const Explore = () => {
   return <section className="flex  xl:h-[30%]  gap-0 p-0">
     {/* TODO */}
     <div className="flex flex-col lg:flex-row xl:flex-1  w-screen  ease-linear duration-500 xl:overflow-x-clip  ">
-      <img className="lg:grow object-cover lg:max-w-[23rem] xl:max-w-[18rem] flex xl:flex-1" src={data1[currentIndex1]} />
+      <img className="lg:grow object-cover lg:max-w-[23rem] xl:max-w-[24rem] xl:w-[18rem] flex xl:flex-1" src={data1[currentIndex1]} />
       <div className="flex flex-col lg:flex-row  xl:flex-4 xl:whitespace-nowrap">
         <div className="flex flex-row lg:flex-col  ">
           <img className="flex-grow flex-1 max-h-[12rem] md:max-h-[25rem] object-cover " src={data2[currentIndex2]} />
