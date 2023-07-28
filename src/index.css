@@ -17,7 +17,7 @@ body {
   background-color: #131313; /* Set a fallback background color */
   background-image: url("./assets/Property 1=Default (1).png");
   background-repeat: repeat; /* Set to repeat the image both horizontally and vertically */
-  background-size: cover; /* Set the size of the background image to its original size */
+  background-size: contain; /* Set the size of the background image to its original size */
 }
 
 
