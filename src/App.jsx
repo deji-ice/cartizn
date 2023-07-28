@@ -1,15 +1,24 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useMediaQuery } from '@react-hook/media-query'; // Import the useMediaQuery hook
 import Catalog from './pages/Catalog';
 import Home from './pages/Home';
+import bg from "./assets/Property 1=Default (1).png"
 import { gsap } from 'gsap';
 
 function App() {
+
+  const imageRef = useRef(null);
+
   useEffect(() => {
     // GSAP fade-in transition
-    gsap.fromTo('body', { opacity: 0 }, { opacity: 1, duration: 1, onComplete: () => gsap.set('body', { clearProps: 'opacity' }) });
+    gsap.fromTo(
+      imageRef.current, // Use the ref to access the DOM element
+      { x: -100,scale:2 },
+      { x: 100,scale:2, ease: "power1.inOut", duration: 0.1, repeat: -1, yoyo: true }
+    );
+    gsap.fromTo('body', { opacity: 0 }, { opacity: 1, duration: 2, onComplete: () => gsap.set('body', { clearProps: 'opacity' }) });
   }, []);
 
   // Use the useMediaQuery hook to get the screen size
@@ -38,7 +47,8 @@ function App() {
   );
 
   return (
-    <div className='body font-sora border-[0.5px]  border-[#F5F5F5]'>
+    <div className='body relative font-sora border-[0.5px]  overflow-clip border-[#F5F5F5]'>  
+      <img  ref={imageRef}  src={bg} className='absolute ' />   
       {content}
     </div>
   );
