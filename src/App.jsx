@@ -4,7 +4,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useMediaQuery } from '@react-hook/media-query'; // Import the useMediaQuery hook
 import Catalog from './pages/Catalog';
 import Home from './pages/Home';
-import bg from "./assets/Property 1=Default (1).png"
 import { gsap } from 'gsap';
 
 function App() {
@@ -47,8 +46,8 @@ function App() {
   );
 
   return (
-    <div className='body relative font-sora border-[0.5px]  overflow-clip border-[#F5F5F5]'>  
-      <img  ref={imageRef}  src={bg} className='absolute ' />   
+    <div className='body relative font-sora border-[0.5px]  overflow-clip border-[#F5F5F5]'>
+      <div  ref={imageRef} className='overlay w-screen h-screen'></div>  
       {content}
     </div>
   );
