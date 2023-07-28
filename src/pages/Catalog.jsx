@@ -6,6 +6,8 @@ import CreativeShoots from "../components/CreativeShoots";
 import LetsTalk from "../components/LetsTalk";
 import Portraits from "../components/Portraits";
 import Tabs from "../components/Tabs";
+import { Link } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
 
 const Catalog = () => {
     useEffect(() => {
@@ -45,11 +47,15 @@ const Catalog = () => {
       
 
     return (
-        <div className="body">
+        <div className="body relative">
             <Tabs activeTab={activeTab} onTabClick={handleTabClick} />
             <div className="content-wrapper">
                 {renderContentComponent()}
             </div>
+            <Link to="/">
+            <button className=" hidden xl:flex border-[0.5px] border-gray-300  fixed bottom-10 left-10 bg-white z-40 rounded-full text-sm p-3 animate-pulse hover:animate-bounce hover:bg-black hover:text-white  font-semibold">
+              <HomeIcon/> </button>
+            </Link>
             <Footer />
         </div>
     );
