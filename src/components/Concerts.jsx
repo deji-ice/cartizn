@@ -6,11 +6,39 @@ import useInterval from "../hooks/useInterval";
 // eslint-disable-next-line react/prop-types
 const Concerts = ({ isFromRight }) => {
 
-    const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689541913/cartizn/Property_1_Default_1_yxnras.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/c_fill,q_auto:eco,w_322/v1689548765/cartizn/concert/Property_1_Variant5_fil8wh.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549531/cartizn/concert/Property_1_Variant6_ms0pjh.png"];
-    const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549705/cartizn/concert/Property_1_Default_3_plkxhl.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549706/cartizn/concert/Property_1_Variant3_1_wv5e7w.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689549708/cartizn/concert/Property_1_Variant4_tdvm6n.png"];
-    const data3 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550489/cartizn/concert/Property_1_Default_4_mynfe0.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550490/cartizn/concert/Property_1_Variant3_2_ffwbeq.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550487/cartizn/concert/Property_1_Variant2_1_w7mzzh.png"];
-    const data4 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550918/cartizn/concert/Property_1_Variant2_3_qaxeqo.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550878/cartizn/concert/Property_1_Variant3_3_lhw2d2.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550881/cartizn/concert/Property_1_Variant4_1_bl2smq.png"];
-    const data5 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550887/cartizn/concert/Property_1_Default_5_qywof8.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550890/cartizn/concert/Property_1_Variant2_4_hjh2gp.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689550883/cartizn/concert/Property_1_Variant4_2_khipd0.png"];
+    const data1 = [
+    "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740988/cartizn/concert/Property_1_Variant4_bu6obs.png",
+     "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740989/cartizn/concert/Property_1_Default_kmyw1u.png", 
+     "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740978/cartizn/concert/Property_1_Variant3_w9m4ko.png", 
+     "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740970/cartizn/concert/Property_1_Variant6_vacaf9.png", 
+     "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740973/cartizn/concert/Property_1_Variant5_si8y0s.png", 
+    "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740980/cartizn/concert/Property_1_Variant2_yux8km.png"
+    ];
+
+    const data2 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741377/cartizn/concert/Property_1_Variant2_ncp1f2.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741376/cartizn/concert/Property_1_Default_msggew.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741376/cartizn/concert/Property_1_Default_msggew.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741377/cartizn/concert/Property_1_Variant4_wo9ve4.png",
+    ];
+    const data3 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741417/cartizn/concert/Property_1_Default_lggvvx.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741416/cartizn/concert/Property_1_Variant2_vl3n5x.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741417/cartizn/concert/Property_1_Variant4_wfdlu8.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741432/cartizn/concert/Property_1_Variant4_fy1wxc.png",
+    ];
+    const data4 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741437/cartizn/concert/Property_1_Variant3_yjrseu.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741435/cartizn/concert/Property_1_Default_pgggwm.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741435/cartizn/concert/Property_1_Default_pgggwm.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741432/cartizn/concert/Property_1_Variant4_fy1wxc.png"
+    ];
+    const data5 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741799/cartizn/concert/Property_1_Default_hz346x.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741802/cartizn/concert/Property_1_Variant2_cja0nv.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741797/cartizn/concert/Property_1_Variant4_o1neqe.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690741795/cartizn/concert/Property_1_Variant3_wkykdj.png"
+    ];
 
     const {
         currentIndex1,
@@ -28,10 +56,10 @@ const Concerts = ({ isFromRight }) => {
         className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
-                <img className="object-contain  border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="object-contain border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img className="object-contain max-w-[20rem] border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img className="object-contain border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
-            <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
+            <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.1px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex  gap-2 xl:gap-2 lg:gap-0">
                     <h1 className="qarkine text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  ">
                         CONCERTS <span className="hidden md:inline">&nbsp;</span> & <span className="hidden md:inline">&nbsp;</span>EVENTS
@@ -45,23 +73,23 @@ const Concerts = ({ isFromRight }) => {
             </div>
         </div>
 
-        <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
+        <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.1px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center justify-center">
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
 
             <div className="flex flex-2 items-center ">
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className=" border-[0.5px] border-[#F5F5F5] " src={data5[currentIndex5]} />
+                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5] " src={data5[currentIndex5]} />
             </div>
         </div>
         <div className="m-auto xl:hidden  ">
             <div className="md:grid-cols-2  md:grid">
-                <img className="w-screen border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
+                <img className="w-screen border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img className="w-screen border-[0.1px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
     </motion.div>;
