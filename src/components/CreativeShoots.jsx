@@ -7,11 +7,33 @@ import useInterval from "../hooks/useInterval";
 // eslint-disable-next-line react/prop-types
 const CreativeShoots = ({ isFromRight }) => {
 
-    const data1 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant3_p77jl3.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant4_l3tl5p.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Variant2_hh4xtb.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594306/cartizn/creative%20shoots/Property_1_Default_eqyspq.png",];
-    const data2 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant4_ycmost.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Default_wyivhk.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant3_pdryuk.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594271/cartizn/creative%20shoots/Property_1_Variant2_oybbzd.png",];
-    const data3 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594809/cartizn/creative%20shoots/Property_1_Default_xr17wt.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594808/cartizn/creative%20shoots/Property_1_Variant3_k0ymip.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594808/cartizn/creative%20shoots/Property_1_Variant2_yhhnnl.png",];
-    const data4 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594368/cartizn/creative%20shoots/Property_1_Variant4_aazupf.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594369/cartizn/creative%20shoots/Property_1_Variant2_fx8wfc.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594369/cartizn/creative%20shoots/Property_1_Default_qevbzf.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594369/cartizn/creative%20shoots/Property_1_Variant3_nbmulw.png",];
-    const data5 = ["https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594333/cartizn/creative%20shoots/Property_1_Variant3_xeahzi.png", "https://res.cloudinary.com/dhvwthnzq/image/upload/v1689594333/cartizn/creative%20shoots/Property_1_Variant4_qv36oy.png",];
+    const data1 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744715/cartiznHD/creative/Property_1_Variant4_ilz6im.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744706/cartiznHD/creative/Property_1_Variant3_r1vzuu.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744696/cartiznHD/creative/Property_1_Variant2_rs0rh4.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744683/cartiznHD/creative/Property_1_Default_eimhxo.png"
+    ];
+    const data2 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744728/cartiznHD/creative/Property_1_Variant3-3_cxp1wh.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744691/cartiznHD/creative/Property_1_Default-3_uhdwkv.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744698/cartiznHD/creative/Property_1_Variant4-3_y4a8bj.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744696/cartiznHD/creative/Property_1_Variant2-3_x45vfi.png"
+    ];
+    const data3 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744690/cartiznHD/creative/Property_1_Default-4_icqzbv.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744735/cartiznHD/creative/Property_1_Variant3-4_y5pje8.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744709/cartiznHD/creative/Property_1_Variant2-4_m1hpun.png"
+    ];
+    const data4 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744695/cartiznHD/creative/Property_1_Variant4-1_yv3gqz.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744735/cartiznHD/creative/Property_1_Default-1_lc6lrq.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744734/cartiznHD/creative/Property_1_Variant3-1_guatyz.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744679/cartiznHD/creative/Property_1_Variant2-1_zl3iww.png",
+    ];
+    const data5 = [
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744676/cartiznHD/creative/Property_1_Variant2-2_zf61lo.png",
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690744675/cartiznHD/creative/Property_1_Variant3-2_lbalxc.png"
+    ];
    
     const {
         currentIndex1,
@@ -41,20 +63,20 @@ const CreativeShoots = ({ isFromRight }) => {
                 </p>
             </div>
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
-                <img className="object-contain  w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img className="object-contain  w-fit border-[0.5px] max-w-[20rem]  border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
 
         </div>
 
         <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center ">
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
-                <img className=" border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data4[currentIndex4]} />
 
             </div>
             <div className="flex flex-1 items-center justify-center">
-                <img className=" border-[0.5px] border-[#F5F5F5] " src={data5[currentIndex5]} />
+                <img className=" border-[0.5px]  max-h-[22.531rem] object-contain border-[#F5F5F5] " src={data5[currentIndex5]} />
 
             </div>
 
