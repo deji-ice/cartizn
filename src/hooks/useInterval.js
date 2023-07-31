@@ -23,14 +23,14 @@ const useInterval = (
 
     const animateFadeOut = (element) => {
         gsap.from(element, {
-            opacity: 0.1,
-            duration: 1,
-            ease: 'power2.inOut'
+            opacity: 0.5,
+            duration: 0.3,
+            ease: 'Back.easeIn'
           });
         gsap.to(element, {
           opacity: 1,
           duration: 2,
-          ease: 'power2.inOut'
+          repeat:1, yoyo:true, ease: "Power4.easeOut"
         });
       };
   
