@@ -22,27 +22,33 @@ const useInterval = (
   useEffect(() => {
 
     const animateFadeOut = (element) => {
+        gsap.from(element, {
+            opacity: 0,
+            duration: 1
+          });
         gsap.to(element, {
-          opacity: 0,
-          duration: 0.5,
+          opacity: 1,
+          duration: 2,
+          ease: 'power1.inOut'
         });
       };
   
       // Function to animate fading in the next image
-      const animateFadeIn = (element) => {
-        gsap.to(element, {
-          opacity: 1,
-          duration: 0.5,
-        });
-      };
+    //   const animateFadeIn = (element) => {
+    //     gsap.to(element, {
+    //       opacity: 1,
+    //       duration: 1
+    //     });
+    //   };
     const intervals = [];
 
     if (data1 && data1.length > 0) {
       const interval1 = setInterval(() => {
 
-        animateFadeOut(image1Ref.current);
         setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
-      }, 2000);
+        
+        animateFadeOut(image1Ref.current);
+      }, 2900);
       intervals.push(interval1);
     }
 
@@ -50,7 +56,7 @@ const useInterval = (
       const interval2 = setInterval(() => {
         setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
           animateFadeOut(image2Ref.current);
-      }, 2000);
+      }, 2600);
       intervals.push(interval2);
     }
 
@@ -58,7 +64,7 @@ const useInterval = (
       const interval3 = setInterval(() => {
         setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
           animateFadeOut(image3Ref.current);
-      }, 3000);
+      }, 2700);
       intervals.push(interval3);
     }
 
@@ -74,18 +80,9 @@ const useInterval = (
       const interval5 = setInterval(() => {
           animateFadeOut(image5Ref.current);
         setCurrentIndex5((prevIndex) => (prevIndex + 1) % data5.length);
-      }, 3500);
+      }, 3000);
       intervals.push(interval5);
     }
-        // Interval to trigger fading in of the next image
-        const fadeInInterval = setInterval(() => {
-            animateFadeIn(image1Ref.current);
-            animateFadeIn(image2Ref.current);
-            animateFadeIn(image3Ref.current);
-            animateFadeIn(image4Ref.current);
-            animateFadeIn(image5Ref.current);
-          }, 2000); // Adjust the timing to match the dissolve effect duration
-      
 
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
