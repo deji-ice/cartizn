@@ -2,9 +2,17 @@
 import fire from "../assets/image 1359 (3).png"
 import { motion } from "framer-motion";
 import useInterval from "../hooks/useInterval";
+import { useRef } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Concerts = ({ isFromRight }) => {
+
+        // Create refs for the images
+        const image1Ref = useRef(null);
+        const image2Ref = useRef(null);
+        const image3Ref = useRef(null);
+        const image4Ref = useRef(null);
+        const image5Ref = useRef(null);
 
     const data1 = [
     "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690740988/cartizn/concert/Property_1_Variant4_bu6obs.png",
@@ -56,8 +64,8 @@ const Concerts = ({ isFromRight }) => {
         className="flex flex-col h-fit">
         <div className="lg:flex xl:h-fit  ">
             <div className="hidden xl:flex xl:flex-2 xl:h-full  ">
-                <img className="object-contain max-w-[20rem] border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="object-contain border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img ref={image1Ref} className="object-contain max-w-[20rem] border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img ref={image2Ref} className="object-contain border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
             <div className=" xl:flex-1 flex flex-col py-10 md:py-20 xl:px-0  px-3 items-center justify-center border-[0.1px] border-[#F5F5F5] text-[#F5F5F5] ">
                 <div className="items-center justify-center flex  gap-2 xl:gap-2 lg:gap-0">
@@ -75,21 +83,21 @@ const Concerts = ({ isFromRight }) => {
 
         <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.1px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center justify-center">
-                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img ref={image3Ref} className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
 
             <div className="flex flex-2 items-center ">
-                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5] " src={data5[currentIndex5]} />
+                <img ref={image4Ref} className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img ref={image5Ref} className=" border-[0.1px] max-w-[20rem] border-[#F5F5F5] " src={data5[currentIndex5]} />
             </div>
         </div>
         <div className="m-auto xl:hidden  ">
             <div className="md:grid-cols-2  md:grid">
-                <img className="w-screen border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data2[currentIndex2]} />
-                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data3[currentIndex3]} />
-                <img className="w-screen border-[0.1px] border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className="w-screen border-[0.1px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
+                <img  ref={image1Ref} className="w-screen border-[0.1px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img  ref={image2Ref} className="w-screen border-[0.1px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img ref={image3Ref} className="w-screen border-[0.1px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img ref={image4Ref} className="w-screen border-[0.1px] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img ref={image5Ref} className="w-screen border-[0.1px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
     </motion.div>;
