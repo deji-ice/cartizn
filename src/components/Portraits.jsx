@@ -3,10 +3,20 @@
 import camera from "../assets/image 1359 (2).png"
 import { motion } from "framer-motion";
 import useInterval from "../hooks/useInterval";
+import { useRef } from "react";
 
 
 // eslint-disable-next-line react/prop-types
 const Portraits = ({ isFromRight }) => {
+
+
+    // Create refs for the images
+    const image1Ref = useRef(null);
+    const image2Ref = useRef(null);
+    const image3Ref = useRef(null);
+    const image4Ref = useRef(null);
+    const image5Ref = useRef(null);
+
 
     const data1 = [
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743289/cartiznHD/portraits/Property_1_Default_uy9jx3.png",
@@ -18,7 +28,7 @@ const Portraits = ({ isFromRight }) => {
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743311/cartiznHD/portraits/Property_1_Variant3-1_qrspfl.png",
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743303/cartiznHD/portraits/Property_1_Variant2-1_lgi4yb.png",
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743308/cartiznHD/portraits/Property_1_Default-1_hjh8hb.png",
-        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743281/cartiznHD/portraits/Property_1_Variant4-1_c3lai9.png"                       
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743281/cartiznHD/portraits/Property_1_Variant4-1_c3lai9.png"
     ];
     const data3 = [
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743279/cartiznHD/portraits/Property_1_Variant3-2_ncedfe.png",
@@ -33,7 +43,7 @@ const Portraits = ({ isFromRight }) => {
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743831/cartiznHD/portraits/Property_1_Variant4_ixen3j.png",
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743824/cartiznHD/portraits/Property_1_Variant5_dprhfe.png",
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743824/cartiznHD/portraits/Property_1_Variant6_tndmzb.png",
-        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743819/cartiznHD/portraits/Property_1_Variant7_sz5119.png" 
+        "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743819/cartiznHD/portraits/Property_1_Variant7_sz5119.png"
     ];
     const data5 = [
         "https://res.cloudinary.com/dhvwthnzq/image/upload/v1690743802/cartiznHD/portraits/Property_1_Variant3-1_wftcz2.png",
@@ -51,7 +61,17 @@ const Portraits = ({ isFromRight }) => {
         currentIndex3,
         currentIndex4,
         currentIndex5
-    } = useInterval(data1, data2, data3, data4, data5)
+    } = useInterval(
+        data1,
+        data2,
+        data3,
+        data4,
+        data5,
+        image1Ref,
+        image2Ref,
+        image3Ref,
+        image4Ref,
+        image5Ref,)
 
     return <motion.div
         initial={{ x: isFromRight ? "100%" : "-100%", opacity: 0 }}
@@ -62,7 +82,7 @@ const Portraits = ({ isFromRight }) => {
         className="flex flex-col xl:h-fit">
         <div className="lg:flex xl:h-fit ">
             <div className=" xl:flex xl:flex-2  ">
-                <img className="object-contain hidden xl:flex max-w-[20rem]   w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img ref={image1Ref} className="object-contain hidden xl:flex max-w-[20rem]   w-fit border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
                 <div className="  flex flex-col py-10 md:py-20 px-3 xl:px-0 items-center justify-center border-[0.5px] border-[#F5F5F5] text-[#F5F5F5] ">
                     <div className="items-center  justify-center flex xl:gap-2 gap-2 lg:gap-0">
                         <h1 className="qarkine  text-[16px] md:text-2xl lg:text-xl xl:text-[23px]  ">
@@ -75,26 +95,26 @@ const Portraits = ({ isFromRight }) => {
                         "Every portrait tells a story, revealing the beauty, vulnerability, and strength within each individual."
                     </p>
                 </div>
-                <img className=" border-[0.5px] max-w-[20rem]  hidden xl:flex  border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img ref={image2Ref} className=" border-[0.5px] max-w-[20rem]  hidden xl:flex  border-[#F5F5F5]" src={data2[currentIndex2]} />
             </div>
         </div>
         <div className="hidden xl:flex h-fit w-screen p-0 m-0 border-[0.5px] border-[#F5F5F5]">
             <div className="flex flex-1 items-center justify-center">
-                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img ref={image3Ref} className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data3[currentIndex3]} />
             </div>
 
             <div className="flex flex-2 items-center ">
-                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5] " src={data5[currentIndex5]} />
+                <img ref={image4Ref} className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img ref={image5Ref} className=" border-[0.5px] max-w-[20rem]  border-[#F5F5F5] " src={data5[currentIndex5]} />
             </div>
         </div>
         <div className="m-auto xl:hidden  ">
             <div className="md:grid-cols-2  md:grid">
-                <img className="w-screen border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
-                <img className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
+                <img ref={image1Ref} className="w-screen border-[0.5px] border-[#F5F5F5] " src={data1[currentIndex1]} />
+                <img ref={image2Ref} className="w-screen border-[0.5px] border-[#F5F5F5]" src={data2[currentIndex2]} />
+                <img ref={image3Ref} className="w-screen border-[0.5px] border-[#F5F5F5]" src={data3[currentIndex3]} />
+                <img ref={image4Ref} className="w-screen border-[0.5px] border-[#F5F5F5]" src={data4[currentIndex4]} />
+                <img ref={image5Ref} className="w-screen border-[0.5px] border-[#F5F5F5] lg:mx-[15rem] md:mx-[11rem]" src={data5[currentIndex5]} />
             </div>
         </div>
     </motion.div>;
