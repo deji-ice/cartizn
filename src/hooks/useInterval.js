@@ -22,15 +22,11 @@ const useInterval = (
   useEffect(() => {
 
     const animateFadeOut = (element) => {
-        gsap.from(element, {
-            opacity: 0.5,
-            duration: 0.3,
-            ease: 'Back.easeIn'
-          });
-        gsap.to(element, {
+
+        gsap.fromTo(element,{opacity:0.6, ease: "back", delay: 3}, {
           opacity: 1,
           duration: 2,
-          repeat:1, yoyo:true, ease: "Power4.easeOut"
+          repeat:1, yoyo:true, ease: "back"
         });
       };
   
