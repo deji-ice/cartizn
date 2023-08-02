@@ -19,7 +19,7 @@ const LetsTalk = ({isFromRight}) => {
 
     // Your EmailJS configuration - replace with your actual values
     const emailJsConfig = {
-      serviceID: "service_g66m58z",
+      serviceID: "service_pphyj9j",
       templateID: "template_2g1kjhk",
       userID: "w2NRGKSFwV4GT8-3z",
     };
