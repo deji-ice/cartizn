@@ -22,14 +22,23 @@ const useInterval = (
   useEffect(() => {
 
     const animateFadeOut = (element) => {
-
-        gsap.fromTo(element,{opacity:0.6, ease: "back", delay: 3}, {
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0.5,
+       
+          // Set the transform origin to the center
+          ease: "power1.easeOut",
+        },
+        {
           opacity: 1,
-          duration: 2,
-          repeat:1, yoyo:true, ease: "back"
-        });
-      };
-  
+          // Scale the image up to make it dissolve from the center
+          duration: 3,
+          transformOrigin: "center center",
+          ease: "power1.easeOut",
+        }
+      );
+    };
       // Function to animate fading in the next image
     //   const animateFadeIn = (element) => {
     //     gsap.to(element, {
@@ -41,11 +50,9 @@ const useInterval = (
 
     if (data1 && data1.length > 0) {
       const interval1 = setInterval(() => {
-
-        setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length);
-        
+        setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length); 
         animateFadeOut(image1Ref.current);
-      }, 2900);
+      },3100);
       intervals.push(interval1);
     }
 
@@ -53,7 +60,7 @@ const useInterval = (
       const interval2 = setInterval(() => {
         setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
           animateFadeOut(image2Ref.current);
-      }, 2600);
+      }, 3000);
       intervals.push(interval2);
     }
 
@@ -61,7 +68,7 @@ const useInterval = (
       const interval3 = setInterval(() => {
         setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
           animateFadeOut(image3Ref.current);
-      }, 2700);
+      }, 3100);
       intervals.push(interval3);
     }
 
@@ -84,7 +91,15 @@ const useInterval = (
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
     };
-  }, []);
+  }, [  image1Ref,
+    image2Ref,
+    image3Ref,
+    image4Ref,
+    image5Ref,  data1,
+    data2,
+    data3,
+    data4,
+    data5,]);
 
   return {
     currentIndex1,
