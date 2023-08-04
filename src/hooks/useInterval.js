@@ -52,7 +52,7 @@ const useInterval = (
       const interval1 = setInterval(() => {
         setCurrentIndex1((prevIndex) => (prevIndex + 1) % data1.length); 
         animateFadeOut(image1Ref.current);
-      },3100);
+      },3000);
       intervals.push(interval1);
     }
 
@@ -68,7 +68,7 @@ const useInterval = (
       const interval3 = setInterval(() => {
         setCurrentIndex3((prevIndex) => (prevIndex + 1) % data3.length);
           animateFadeOut(image3Ref.current);
-      }, 3100);
+      }, 3000);
       intervals.push(interval3);
     }
 
@@ -76,7 +76,7 @@ const useInterval = (
       const interval4 = setInterval(() => {
           animateFadeOut(image4Ref.current);
         setCurrentIndex4((prevIndex) => (prevIndex + 1) % data4.length);
-      }, 3200);
+      }, 3000);
       intervals.push(interval4);
     }
 
