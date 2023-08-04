@@ -60,7 +60,7 @@ const useInterval = (
       const interval2 = setInterval(() => {
         setCurrentIndex2((prevIndex) => (prevIndex + 1) % data2.length);
           animateFadeOut(image2Ref.current);
-      }, 3001);
+      }, 3002);
       intervals.push(interval2);
     }
 
